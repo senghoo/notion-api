@@ -5,7 +5,6 @@ compatibility_date = "2021-09-19"
 zone_id = ""
 route = ""
 account_id = ""
-vars = { NOTION_TOKEN = "" }
 
 [build]
 command = "npm install && npm run build"
