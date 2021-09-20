@@ -16,6 +16,9 @@ jobs:
       uses: cloudflare/wrangler-action@1.2.0
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
+        secrets: |
+          NOTION_SECRET
       env:
         CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         IS_WORKER: true
+        NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
