@@ -20,7 +20,7 @@ export async function getPage(request: Request): Promise<Response> {
     const children = await api.blocks.children.list({
       block_id: id
     })
-    return JsonResponse({page, block, children})
+    return JsonResponse({page, block, children: children.results})
   }catch (e) {
     return ErrorResponse(e)
   }

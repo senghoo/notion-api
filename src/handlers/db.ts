@@ -15,7 +15,7 @@ export async function getDB(request: Request): Promise<Response> {
         database_id: id
       }
     )
-    return JsonResponse({db})
+    return JsonResponse(db)
   }catch (e) {
     return ErrorResponse(e)
   }
@@ -33,7 +33,7 @@ export async function query(request: Request): Promise<Response> {
     }
     obj.database_id = id
     const content = await api.databases.query(obj)
-    return JsonResponse({content})
+    return JsonResponse(content.results)
   }catch (e) {
     return ErrorResponse(e)
   }
